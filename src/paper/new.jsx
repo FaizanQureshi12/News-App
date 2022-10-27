@@ -2,13 +2,13 @@
    import './new.css'
    import axios from 'axios'
    import moment from 'moment'
-   
-
+          
    function Paper (){
     const [data, setData]=useState([]);
     const [query, setQuery]=useState('');
     const [isLoading, setIsLoading]=useState(false);
 
+    //class code
         useEffect(()=>{
         function getTrendingNews(){
 
@@ -61,16 +61,20 @@
     }
 
     return(
-        <div>
-    <form onSubmit={getNews}>
-    <input type="text" placeholder='Enter Your City Name' 
-     onChange={(e)=>
-     {setQuery(e.target.value)} }  id="" />
-    <button type='submit'>Get News</button>
-        </form>
-        <div>
 
+                    <div>
+                <div className='navbar'>
+    <form onSubmit={getNews}>
+    <input type="text"  placeholder='Enter Your City Name' 
+     onChange={(e)=>
+     {setQuery(e.target.value)} }  id="inp" />
+    <button className='btn' type='submit'>Get News</button>
+        </form>
+        </div>
+
+        <div>
     {(isLoading)? "Loading...":""}
+    <div className='fullpost'>
     {data.map(eachPost=> (
     <div className='post' key={eachPost?.name}>
 
@@ -89,8 +93,10 @@
             eachPost?.image?.thumbnail?.contentUrl
             .replace("&pid=News",'')
             .replace('pid=News&','')
-            .replace('pid=News','')} alt="" />
+            .replace('pid=News','')}  className='img' alt="" />
            </div>))}
+       </div>
+
        </div>
  </div>
     );
