@@ -1,0 +1,6 @@
+[{
+        "relation": ["delegate_permission/common.handle_all_urls"],
+        "target" : { "namespace": "android_app", "package_name": "com.firebaseapp.news_app_9ec9e.twa",
+                     "sha256_cert_fingerprints": ["C9:E6:12:A5:68:A4:25:F7:5B:02:85:A1:5E:00:31:D8:E1:37:40:4B:31:33:46:73:D4:23:92:61:F5:2F:E3:FA"] }
+      }
+]
